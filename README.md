@@ -1,0 +1,1 @@
+# gkb.kz-redesign-fix
