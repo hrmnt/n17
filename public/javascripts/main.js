@@ -6,7 +6,7 @@
     /* Owl Carousel
     * ------------------------------------------------------ */
     var clOwlCarousel = function(){
-        $('.owl-carousel').owlCarousel({
+        $('.teacher').owlCarousel({
             loop:true,
             // margin:10,
             responsive:{
@@ -14,10 +14,10 @@
                     items:1
                 },
                 600:{
-                    items:3
+                    items:1
                 },
                 1000:{
-                    items:4
+                    items:1
                 }
             }
         });
@@ -119,7 +119,7 @@
         // clPreloader();
         // clSmoothScroll();
         // clEmailJs();
-        // clOwlCarousel();
+        clOwlCarousel();
         // clBackToTop();
     })();
 })(jQuery);

@@ -44,7 +44,7 @@ gulp.task('default', ['serve']);
 gulp.task('default-2', function() {
     gulp.src('./public/assets/**/*')
         .pipe(imagemin())
-        .pipe(gulp.dest('public/assets/images'))
+        .pipe(gulp.dest('public/assets/teachers'))
 });
 
 
