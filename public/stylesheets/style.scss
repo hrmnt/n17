@@ -159,7 +159,7 @@
   padding: 10rem 0;
 
   @media (max-width: 576px){
-    padding: 4rem 5%;
+    padding: 5rem 5%;
   }
 
   .timeline-background {
@@ -170,6 +170,13 @@
     font-size: 5.6rem;
     font-weight: 700;
     color: $third;
+
+    @media (max-width: 576px){
+      right: 0;
+      left: 3rem;
+
+      font-size: 3.2rem;
+    }
   }
 
   .timeline-header {
@@ -177,6 +184,10 @@
     font-weight: 500;
 
     color: $sixth;
+
+    @media (max-width: 576px){
+      font-size: 2.8rem;
+    }
   }
 
   .timeline-item {
@@ -237,6 +248,10 @@
 
       color: $sixth;
 
+      @media (max-width: 576px){
+        font-size: 2.4rem;
+      }
+
       span {
         color: $first;
       }
@@ -246,6 +261,9 @@
       font-size: 1.8rem;
       font-weight: 400;
 
+      @media (max-width: 576px){
+        font-weight: 300;
+      }
       span {
         font-weight: 500;
         color: $first;
@@ -273,11 +291,19 @@
     font-size: 5.6rem;
     font-weight: 700;
     color: $third;
+
+    @media (max-width: 576px){
+      font-size: 3.2rem;
+    }
   }
 
   .request__text-title {
     font-size: 4rem;
     font-weight: 500;
+
+    @media (max-width: 576px){
+      font-size: 2.4rem;
+    }
   }
 
   .request__text-subtitle {
@@ -287,14 +313,45 @@
     color: $first;
   }
 
-  .request__block {
-    .request__block-input {
-      width: 20rem;
-      border-radius: 5px;
-      color: $third;
+  .request-container {
+    width: 60rem;
+
+    @media (max-width: 576px){
+      width: 100%;
     }
 
-    .request__block-submit {
+    .request__form-input {
+      width: 100%;
+
+      border-radius: 5px;
+      color: $sixth;
+      &::-webkit-input-placeholder {
+        font-size: 1.6rem;
+        color: $sixth;
+      }
+
+      &::-moz-placeholder {
+        font-size: 1.6rem;
+        color: $sixth;
+      }
+
+      &:-ms-input-placeholder {
+        font-size: 1.6rem;
+        color: $sixth;
+      }
+
+      &:-ms-input-placeholder {
+        font-size: 1.6rem;
+        color: $sixth;
+      }
+
+      &:-moz-placeholder {
+        font-size: 1.6rem;
+        color: $sixth;
+      }
+    }
+
+    .request__form-submit {
       background-color: $first;
 
       font-size: 1.6rem;
@@ -309,7 +366,11 @@
   background-color: white;
   position: relative;
 
-  height: 80vh;
+  height: 90vh;
+  padding: 7rem 0;
+  @media (max-width: 576px){
+    height: auto;
+  }
   .be-ready__background-text {
     position: absolute;
     top: 0;
@@ -327,15 +388,24 @@
 
     height: 52rem;
     width: auto;
+
+    z-index: 0;
+    @media (max-width: 767px){
+      height: 42rem;
+    }
+
+    @media (max-width: 476px){
+      height: 30rem;
+    }
   }
 
   .be-ready__block {
+    color: $sixth;
     .be-ready__block-title {
       font-size: 4.2rem;
       font-weight: 800;
       letter-spacing: 0.5px;
 
-      color: $fifth;
       padding-bottom: 5rem;
     }
 
@@ -347,16 +417,27 @@
     .be-ready__block-subtitle {
       font-size: 1.8rem;
       font-weight: 500;
+
+      @media (max-width: 767px){
+        font-size: 2.4rem;
+      }
     }
 
   }
 
   .be-ready__motivation {
+    color: $sixth;
+
+    z-index: 20;
     .first {
       font-size: 5.6rem;
       font-weight: 500;
 
       line-height: 5.6rem;
+      @media (max-width: 767px){
+        font-size: 4.2rem;
+        line-height: 4.2rem;
+      }
     }
 
     .second {
@@ -364,6 +445,11 @@
       line-height: 14.4rem;
 
       font-weight: 500;
+
+      @media (max-width: 767px){
+        font-size: 5.2rem;
+        line-height: 5.2rem;
+      }
     }
 
     .third {
@@ -371,14 +457,40 @@
       font-weight: 500;
 
       line-height: 4rem;
+
+      @media (max-width: 767px){
+        font-size: 3.2rem;
+        line-height: 3.2rem;
+      }
     }
   }
 
-  .be-ready__bottom-text {
-    font-size: 4.2rem;
-    font-weight: 500;
+  .be-ready__bottom {
+    z-index: 20;
 
-    letter-spacing: 0.5px;
+    .be-ready__bottom-text {
+      font-size: 4.2rem;
+      font-weight: 500;
+
+      color: $sixth;
+      letter-spacing: 0.5px;
+
+      @media (max-width: 767px){
+        font-size: 2rem;
+      }
+    }
+
+    .be-ready__bottom-name {
+      font-size: 2.4rem;
+      font-weight: 500;
+
+      color: $sixth;
+      letter-spacing: 0.5px;
+
+      @media (max-width: 767px){
+        font-size: 2rem;
+      }
+    }
   }
 }
 
