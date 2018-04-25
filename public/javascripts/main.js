@@ -7,8 +7,12 @@
     * ------------------------------------------------------ */
     var clOwlCarousel = function(){
         $('.teacher').owlCarousel({
-            loop:true,
-            // margin:10,
+            loop: true,
+            nav:true,
+            // autoplay: true,
+            // autoplayTimeout: 5000,
+            // autoplayHoverPause: true,
+            navText: ["<img src='/images/icons/back.png' style='height: 1.8rem; width: auto'>","<img src='/images/icons/back.png' style='height: 1.8rem; width: auto; transform: rotate(180deg'>"],
             responsive:{
                 0:{
                     items:1
