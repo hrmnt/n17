@@ -647,6 +647,146 @@
   }
 }
 
+.board {
+  padding: 7rem 0;
+
+  .board-title {
+    font-size: 4.4rem;
+    font-weight: 600;
+
+    padding-bottom: 7rem;
+  }
+
+  .right-part {
+    background: #EBEBEB;
+    z-index: 5;
+    color: #5E5E5E;
+    border: 1px solid rgba(235, 235, 235, 0.75);
+    -webkit-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+    &:hover {
+      background-color: #fff;
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+      z-index: 10;
+    }
+  }
+
+  .left-part {
+    background: #EBEBEB;
+    z-index: 5;
+    color: #5E5E5E;
+    border: 1px solid rgba(235,235,235,0.75);
+    transition: all 1s ease-in-out;
+    &:hover, &.active, &.right-part.active {
+      background-color: #fff;
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+      z-index: 10;
+    }
+  }
+
+  .right-part:hover+.left-part {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    background-color: #EBEBEB;
+    z-index: 5;
+  }
+
+  .board-block__title {
+    font-size: 2.4rem;
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+
+    color: $fifth;
+  }
+
+  .board-block__subtitle {
+    font-size: 1.8rem;
+    font-weight: 600;
+
+    color: $fifth;
+  }
+
+  .board-block__text {
+    font-size: 1.6rem;
+    font-weight: 400;
+
+    color: $fifth;
+  }
+}
+
+.board-2 {
+  padding: 7rem 0;
+
+  .board-title {
+    font-size: 4.4rem;
+    font-weight: 600;
+
+    padding-bottom: 7rem;
+  }
+
+  .right-part {
+    background: #EBEBEB;
+    z-index: 5;
+    color: #5E5E5E;
+    border: 1px solid rgba(235, 235, 235, 0.75);
+    -webkit-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+    &:hover {
+      background-color: #fff;
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+      z-index: 10;
+    }
+  }
+
+  .left-part {
+    background: #EBEBEB;
+    z-index: 5;
+    color: #5E5E5E;
+    border: 1px solid rgba(235,235,235,0.75);
+    transition: all 1s ease-in-out;
+    &:hover, &.active, &.right-part.active {
+      background-color: #fff;
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+      z-index: 10;
+    }
+  }
+
+  .right-part:hover+.left-part {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    background-color: #EBEBEB;
+    z-index: 5;
+  }
+
+  .board-block__title {
+    font-size: 2.4rem;
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+
+    color: $fifth;
+  }
+
+  .board-block__subtitle {
+    font-size: 1.8rem;
+    font-weight: 600;
+
+    color: $fifth;
+  }
+
+  .board-block__text {
+    font-size: 1.6rem;
+    font-weight: 400;
+
+    color: $fifth;
+  }
+}
+
 @-webkit-keyframes cf3FadeInOut {
   0% {
     opacity: 1;
