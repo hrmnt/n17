@@ -787,6 +787,44 @@
   }
 }
 
+.map {
+  height: 80vh;
+
+  padding: 7rem 0;
+}
+
+.footer {
+  padding-bottom: 7rem;
+  .footer-title {
+    font-size: 1.8rem;
+    font-weight: 500;
+
+    color: $fifth;
+  }
+
+  .footer-subtitle {
+    font-size: 1.6rem;
+    font-weight: 400;
+
+    transition: 0.5s all;
+    color: $sixth;
+    &:hover {
+      color: $fifth;
+    }
+  }
+
+  .footer-text {
+    font-size: 1.6rem;
+    font-weight: 400;
+
+    color: $fifth;
+  }
+
+  .footer-image {
+    width: 100%;
+    height: auto;
+  }
+}
 @-webkit-keyframes cf3FadeInOut {
   0% {
     opacity: 1;
