@@ -1,4 +1,4 @@
-(function($) {
+jQuery(document).ready(function($){
     var cfg = {
             scrollDuration : 800, // smoothscroll duration
         };
@@ -9,9 +9,9 @@
         $('.teacher').owlCarousel({
             loop: true,
             nav:true,
-            // autoplay: true,
-            // autoplayTimeout: 5000,
-            // autoplayHoverPause: true,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            autoplayHoverPause: true,
             navText: ["<img src='/images/icons/back.png' style='height: 1.8rem; width: auto'>","<img src='/images/icons/back.png' style='height: 1.8rem; width: auto; transform: rotate(180deg'>"],
             responsive:{
                 0:{
@@ -69,7 +69,7 @@
     /* EmailJs
     * ------------------------------------------------------ */
     var clEmailJs = function(){
-        // emailjs.init("user_SgFluNR0Eudhc9IV1r9yI");
+        emailjs.init("user_fEVFyKLM3zZVdqvdUhNmp");
 
         var myform = $("form#myform");
 
@@ -77,16 +77,16 @@
             event.preventDefault();
             console.log(myform);
             var service_id = "gmail";
-            var template_id = "template_lCZF3ADj";
+            var template_id = "template_0jZFRUAD";
 
-            $(".message__form-button").prop('disabled', true);
-            $(".message__form-button").val("Отправка...");
+            $(".request__form-submit").prop('disabled', true);
+            $(".request__form-submit").val("Отправка...");
 
-            // emailjs.sendForm(service_id,template_id,"myform").then(function(){
-            //     $(".message__form-button").val("Ваша заявка успешно отправлена...");
-            // }, function(err) {
-            //     $(".message__form-button").val("Ошибка! Заявка не отправлена, повторите позже!");
-            // });
+            emailjs.sendForm(service_id,template_id,"myform").then(function(){
+                $(".request__form-submit").val("Ваша заявка успешно отправлена...");
+            }, function(err) {
+                $(".request__form-submit").val("Ошибка! Заявка не отправлена, повторите позже!");
+            });
             return false;
         });
     };
@@ -121,9 +121,9 @@
     (function ssInit() {
         // clOthers();
         // clPreloader();
-        // clSmoothScroll();
-        // clEmailJs();
+        clSmoothScroll();
+        clEmailJs();
         clOwlCarousel();
         // clBackToTop();
     })();
-})(jQuery);
+});
