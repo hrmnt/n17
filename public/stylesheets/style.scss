@@ -5,17 +5,20 @@
   background-color: white;
   width: 100%;
   z-index: 100;
-  border-bottom:1px solid $first;
+  border-bottom: 1px solid $first;
   padding: 2rem;
-  top:-8rem;
-  img{
+  img {
     height: 100%;
   }
-  p{
-    color: #000;
+  p {
+    color: $sixth;
     &:hover{
       color: $second;
     }
+  }
+
+  .nav-title {
+    color: $first;
   }
 }
 .main {

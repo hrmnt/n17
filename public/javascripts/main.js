@@ -61,7 +61,7 @@ jQuery(document).ready(function($){
             e.stopPropagation();
 
             $('html, body').stop().animate({
-                'scrollTop': $target.offset().top
+                'scrollTop': $target.offset().top - 80
             },
                 cfg.scrollDuration, 'swing').promise();
         });
