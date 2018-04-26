@@ -1,5 +1,23 @@
 @import "config.scss";
-
+.nav{
+  height: 8rem;
+  position: fixed;
+  background-color: white;
+  width: 100%;
+  z-index: 100;
+  border-bottom:1px solid $first;
+  padding: 2rem;
+  top:-8rem;
+  img{
+    height: 100%;
+  }
+  p{
+    color: #000;
+    &:hover{
+      color: $second;
+    }
+  }
+}
 .main {
   position: relative;
   height: 100vh;

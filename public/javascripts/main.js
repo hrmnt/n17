@@ -1,4 +1,6 @@
 jQuery(document).ready(function($){
+
+    AOS.init();
     var cfg = {
             scrollDuration : 800, // smoothscroll duration
         };

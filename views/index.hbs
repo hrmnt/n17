@@ -21,11 +21,34 @@
     <link rel='stylesheet' href='/libs/normalize-css/normalize.css'/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <link rel="stylesheet" href="/libs/owl.carousel/dist/assets/owl.carousel.min.css"/>
-
+    <link rel="stylesheet" href="libs/aos/dist/aos.css" />
     <link rel='stylesheet' href='/stylesheets/style.css'/>
 </head>
 
 <body>
+
+<div class="nav">
+    <div class="container d-flex justify-content-between">
+        <a href="/">
+            <img src="/images/icons/logo-2.png" alt="">
+
+        </a>
+        <div class="w-75 d-flex justify-content-around align-items-center">
+            <a href="">
+                <p>Подробнее</p>
+            </a>
+            <a href="">
+                <p>Подробнее</p>
+            </a>
+            <a href="">
+                <p>Подробнее</p>
+            </a>
+        </div>
+
+    </div>
+
+
+</div>
 <div class="main">
     <div class="background-layer first h-100 w-100"></div>
     <div class="background-layer second h-100 w-100"></div>
@@ -34,7 +57,7 @@
     <div class="overlay h-100 w-100">
         <div class="container h-100">
             <nav class="navbar navbar-expand-lg navbar-light py-5">
-                <a class="navbar-brand" href="#"><img class="main__navbar-icon" src="/images/icons/logo-2.png" alt=""></a>
+                <a class="navbar-brand" href="/"><img class="main__navbar-icon" src="/images/icons/logo-2.png" alt=""></a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -105,7 +128,7 @@
         <div class="row mt-3">
             <div class="col-md-12">
                 <div class="row">
-                    <div class="col-sm-6 col-xs-12 timeline-item start">
+                    <div class="col-sm-6 col-xs-12 timeline-item start"  data-aos="fade-down">
                         <div class="d-flex flex-column justify-content-center text-center">
                             <h3 class="m-0 p-0">
                                 Академия наук GKB
@@ -113,7 +136,7 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-6 col-xs-12 timeline-item">
+                    <div class="col-sm-6 col-xs-12 timeline-item" data-aos="fade-down">
                         <div class="d-flex flex-column justify-content-center text-center">
                             <h3 class="m-0 p-0">
                                 <span>Самый сильный</span> тренерский состав <span>в стране</span>
@@ -125,7 +148,7 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-6 col-xs-12 timeline-item">
+                    <div class="col-sm-6 col-xs-12 timeline-item" data-aos="fade-down">
                         <div class="d-flex flex-column justify-content-center text-center">
                             <h3 class="m-0 p-0">
                                 Нам <span>доверяют лучшие!</span>
@@ -137,7 +160,7 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-6 col-xs-12 timeline-item">
+                    <div class="col-sm-6 col-xs-12 timeline-item" data-aos="fade-down">
                         <div class="d-flex flex-column justify-content-center text-center">
                             <h3 class="m-0 p-0">
                                 <span>80%</span> наших детей
@@ -149,7 +172,7 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-6 col-xs-12 timeline-item">
+                    <div class="col-sm-6 col-xs-12 timeline-item" data-aos="fade-down">
                         <div class="d-flex flex-column justify-content-center text-center">
                             <h3 class="m-0 p-0">
                                 Учим ребенка <span>мыслить нестандартно</span>
@@ -1360,6 +1383,7 @@
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="/libs/aos/dist/aos.js"></script>
 <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
