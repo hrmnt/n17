@@ -1,27 +1,7 @@
 jQuery(document).ready(function($){
-    var header = document.querySelector("#header"), origOffsetY = header.offsetTop, headerIsFixed = !1;
-    var main = document.querySelector("#main").offsetTop;
-
-    AOS.init();
     var cfg = {
-            scrollDuration : 800, // smoothscroll duration
-        };
-
-    function onScroll() {
-        if (window.scrollY >= main) {
-            $(header).addClass("top");
-        }
-        if (window.scrollY <= main) {
-            $(header).removeClass("top");
-        }
-    }
-
-    // $("#menumenu li a").click(function() {
-    //     $("#menumenu li").removeClass('selected');
-    //     $(this).parent().addClass('selected');
-    // });
-
-
+        scrollDuration : 800, // smoothscroll duration
+    };
     /* Owl Carousel
     * ------------------------------------------------------ */
     var clOwlCarousel = function(){
@@ -151,8 +131,46 @@ jQuery(document).ready(function($){
 
 
     var clOthers = function(){
-        // var div = document.getElementById("main");
-        // console.log(div.offsetTop);
+        AOS.init();
+
+        var header = document.querySelector("#header");
+        var main = document.querySelector("#main").offsetTop;
+        var beready = document.querySelector("#beready").offsetTop;
+        var teachers = document.querySelector("#teachers").offsetTop;
+
+        function onScroll() {
+            if (window.scrollY >= main) {
+                $(header).addClass("top");
+                $("a[href$='main']").addClass("active");
+            }
+
+            if (window.scrollY <= main) {
+                $(header).removeClass("top");
+            }
+
+            if (window.scrollY + 110 < beready) {
+                $("a[href$='beready']").removeClass("active");
+                $("a[href$='request']").addClass("active");
+            }
+
+            if (window.scrollY + 110 >= beready && window.scrollY + 110 <= teachers) {
+                $("a[href$='request']").removeClass("active");
+                $("a[href$='teachers']").removeClass("active");
+                $("a[href$='beready']").addClass("active");
+            }
+
+            if(window.scrollY + 110 > teachers){
+                $("a[href$='beready']").removeClass("active");
+                $("a[href$='teachers']").addClass("active");
+            }
+        }
+
+        // $('ul li a').click(function(){
+        //     $('a').removeClass('active');
+        //     $(this).addClass("active");
+        // });
+
+
 
         document.addEventListener("scroll", onScroll);
     };

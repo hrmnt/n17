@@ -58,10 +58,7 @@ body {
     -webkit-appearance: none;
     margin: 0;
   }
-
 }
-
-
 a {
   &:hover {
     text-decoration: none;
@@ -83,4 +80,8 @@ button:focus {
 
 section {
   position: relative;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus {
+  box-shadow: none;
 }
