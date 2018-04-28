@@ -27,99 +27,108 @@
 
 <body>
 
-<div class="nav">
-    <div class="container d-flex justify-content-between">
+<div class="nav" id="header">
+    <div class="container d-flex align-items-center justify-content-between">
         <a href="/">
-            <img src="/images/icons/logo-2.png" alt="">
-
+            <img class="nav-header__icon" src="/images/icons/logo-2.png" alt="">
         </a>
-        <div class="w-75 d-flex justify-content-around align-items-center">
-            <a class="smoothscroll" href="#request">
-                <p class="m-0 p-0">Попробуйте</p>
+
+        <ul class="w-75 d-flex justify-content-around align-items-center" id="menumenu">
+            <a class="smoothscroll active" href="#request">
+                <li class="m-0 p-0">Попробуйте</li>
             </a>
             <a class="smoothscroll" href="#beready">
-                <p class="m-0 p-0">Готовьтесь</p>
+                <li class="m-0 p-0">Готовьтесь</li>
             </a>
             <a class="smoothscroll" href="#teachers">
-                <p class="m-0 p-0">Достигайте</p>
+                <li class="m-0 p-0">Достигайте</li>
             </a>
 
             <a class="smoothscroll" href="#request">
-                <p class="nav-title m-0 p-0">Записаться</p>
+                <li class="m-0 p-0 btn btn-primary nav-title border-0 p-2 px-5">Бесплатный урок</li>
             </a>
-        </div>
+        </ul>
 
     </div>
 
 
 </div>
+
 <div class="main">
-    <div class="background-layer first h-100 w-100"></div>
-    <div class="background-layer second h-100 w-100"></div>
-    <div class="background-layer third h-100 w-100"></div>
+
+    <div class="main-background owl-carousel owl-theme owl-loaded owl-drag">
+        <div class="first">
+        </div>
+
+        <div class="second">
+        </div>
+
+        <div class="third">
+        </div>
+    </div>
 
     <div class="overlay h-100 w-100">
         <div class="container h-100">
-            <nav class="navbar navbar-expand-lg navbar-light py-5">
-                <a class="navbar-brand" href="/"><img class="main__navbar-icon" src="/images/icons/logo-2.png" alt=""></a>
+        <nav class="navbar navbar-expand-lg navbar-light py-5">
+            <a class="navbar-brand" href="/"><img class="main__navbar-icon" src="/images/icons/logo-2.png" alt=""></a>
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                <div class="collapse navbar-collapse d-lg-flex align-items-lg-center justify-content-lg-between" id="navbarText">
-                    <ul class="navbar-nav">
-                        <li class="nav-item active">
-                            <a class="nav-link smoothscroll text-white main__navbar-title ml-5" href="#schedule">
-                                Расписание на май
-                                <div class="main__navbar-title-underline"></div>
-                            </a>
-                        </li>
+            <div class="collapse navbar-collapse d-lg-flex align-items-lg-center justify-content-lg-between" id="navbarText">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link smoothscroll text-white main__navbar-title ml-5" href="#schedule">
+                            Расписание на май
+                            <div class="main__navbar-title-underline"></div>
+                        </a>
+                    </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link smoothscroll text-white main__navbar-title ml-5" href="#summer">
-                                Летний интенсив
-                                <div class="main__navbar-title-underline"></div>
-                            </a>
-                        </li>
-                    </ul>
+                    <li class="nav-item">
+                        <a class="nav-link smoothscroll text-white main__navbar-title ml-5" href="#summer">
+                            Летний интенсив
+                            <div class="main__navbar-title-underline"></div>
+                        </a>
+                    </li>
+                </ul>
 
-                    <ul class="navbar-nav d-block d-lg-flex align-items-lg-center">
-                        <li class="nav-item d-block d-lg-flex flex-lg-column pr-5">
-                            <a class="nav-link text-white main__navbar-subtitle p-0" href="tel:+77273900505"><span>8-727-390-05-05</span></a>
-                            <a class="nav-link text-white main__navbar-subtitle p-0 mr-5" href="tel:+77273900505"><span>8-727-390-05-05</span></a>
-                        </li>
+                <ul class="navbar-nav d-block d-lg-flex align-items-lg-center">
+                    <li class="nav-item d-block d-lg-flex flex-lg-column pr-5">
+                        <a class="nav-link text-white main__navbar-subtitle p-0" href="tel:+77273900505"><span>8-727-390-05-05</span></a>
+                        <a class="nav-link text-white main__navbar-subtitle p-0 mr-5" href="tel:+77273900505"><span>8-727-390-05-05</span></a>
+                    </li>
 
-                        <li class="nav-item d-block d-lg-flex pl-5">
-                            <a class="nav-link text-white main__navbar-title" href="https://www.facebook.com/gkbacademy/"><img class="main__navbar-image mr-3" src="/images/icons/facebook.png" alt="Facebook"></a>
-                            <a class="nav-link text-white main__navbar-title" href="https://www.instagram.com/gkb_academy"><img class="main__navbar-image" src="/images/icons/vk.png" alt="VKontakte"></a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-
-            <div class="main__text d-flex flex-column align-items-center justify-content-center text-center">
-                <div class="d-flex text-white m-0 p-0">
-                    <h3 class="main__text-title m-0 p-0">Курсы подготовки к РФМШ</h3>
-                </div>
-
-                <div class="main__text-line"></div>
-
-                <h3 class="main__text-text text-white m-0 p-0">
-                    Записаться на бесплатный урок
-                </h3>
-
-                <a class="smoothscroll" href="#request">
-                    <div class="btn btn-primary main__text-button border-0 p-2 px-5 mt-4">
-                        <p class="main__text-button-text m-0 p-0 pb-2 px-5">Записаться</p>
-                    </div>
-                </a>
+                    <li class="nav-item d-block d-lg-flex pl-5">
+                        <a class="nav-link text-white main__navbar-title" href="https://www.facebook.com/gkbacademy/"><img class="main__navbar-image mr-3" src="/images/icons/facebook.png" alt="Facebook"></a>
+                        <a class="nav-link text-white main__navbar-title" href="https://www.instagram.com/gkb_academy"><img class="main__navbar-image" src="/images/icons/vk.png" alt="VKontakte"></a>
+                    </li>
+                </ul>
             </div>
+        </nav>
+
+        <div class="main__text d-flex flex-column align-items-center justify-content-center text-center">
+            <div class="d-flex text-white m-0 p-0">
+                <h3 class="main__text-title m-0 p-0">Курсы подготовки к РФМШ</h3>
+            </div>
+
+            <div class="main__text-line"></div>
+
+            <h3 class="main__text-text text-white m-0 p-0">
+                Записаться на бесплатный урок
+            </h3>
+
+            <a class="smoothscroll" href="#request">
+                <div class="btn btn-primary main__text-button border-0 p-2 px-5 mt-4">
+                    <p class="main__text-button-text m-0 p-0 pb-2 px-5">Записаться</p>
+                </div>
+            </a>
         </div>
+    </div>
     </div>
 </div>
 
-<div class="timeline">
+<div class="timeline" id="main">
     <span class="timeline-background text-uppercase">
         Наши преимущества
     </span>
@@ -143,11 +152,11 @@
                     <div class="col-sm-6 col-xs-12 timeline-item" data-aos="fade-down">
                         <div class="d-flex flex-column justify-content-center text-center">
                             <h3 class="m-0 p-0">
-                                <span>Самый сильный</span> тренерский состав <span>в стране</span>
+                                <span>Самый сильный</span> тренерский состав <br><span>в стране</span>
                             </h3>
 
                             <p class="m-0 p-0 mt-4">
-                                Нашими тренерами завоевано <span>более 150 медалей</span> самых престижных международных олимпиад. Ни в одном учебном центре неи такой <span>концентрации олимпийских звезд!</span>
+                                Нашими тренерами завоевано <span>более 150 медалей</span> самых престижных международных олимпиад. Ни в одном учебном центре Казахстана нет такой <span>концентрации олимпийских звезд!</span>
                             </p>
                         </div>
                     </div>
@@ -159,7 +168,7 @@
                             </h3>
 
                             <p class="m-0 p-0 mt-4">
-                                Самые сильные физико-математические школы страны -  <span>РФМШ НИШ ФМН 165 технический лицей БИЛ (Аксай КТЛ) 90 лицей </span> готовяться к олимпиаде с <span>НАШИМИ ТРЕНЕРАМИ</span>.
+                                Самые сильные физико-математические школы страны -  <span>РФМШ, НИШ ФМН Алматы, <br>165 технический лицей, БИЛ (Аксай КТЛ), 90 лицей </span> готовятся к олимпиаде с <span>НАШИМИ ТРЕНЕРАМИ</span>.
                             </p>
                         </div>
                     </div>
@@ -179,11 +188,11 @@
                     <div class="col-sm-6 col-xs-12 timeline-item" data-aos="fade-down">
                         <div class="d-flex flex-column justify-content-center text-center">
                             <h3 class="m-0 p-0">
-                                Учим ребенка <span>мыслить нестандартно</span>
+                                Учим ребенка <span>мыслить нестандартно,</span>
                             </h3>
 
                             <p class="m-0 p-0 mt-4">
-                                Применяя на занятиях <span>ТРИЗ (Теорию Решения Изобретательных Задач)</span>.
+                                Применяя на занятиях <span>ТРИЗ <br>(Теорию Решения Изобретательских Задач)</span>
                             </p>
                         </div>
                     </div>
@@ -210,7 +219,7 @@
             <form method="post" id="myform">
                 <div class="form-group mt-5 d-flex flex-column flex-sm-row justify-content-center">
                     <input type="text" name="contactName" class="request__form-input border-0 p-3 mr-3" placeholder="Имя" required="" autocomplete="off">
-                    <input type="phone" name="contactPhone" class="request__form-input border-0 p-3 mr-3 mt-4 mt-sm-0" placeholder="+7 ( _ _ _ ) _ _ _ - _ _ - _ _" required="" autocomplete="off" max="11">
+                    <input type="text" name="contactPhone" class="request__form-input border-0 p-3 mr-3 mt-4 mt-sm-0" placeholder="+7 ( _ _ _ ) _ _ _ - _ _ - _ _" value="87" autocomplete="off" max="11">
                     <input type="submit" class="btn request__form-submit border-0 p-3 px-5 text-white mt-4 mt-sm-0" value="Оставить заявку">
                 </div>
             </form>
@@ -231,7 +240,7 @@
             <div class="col-md-7">
                 <div class="be-ready__block">
                     <h3 class="be-ready__block-title m-0">
-                        Готовься только с лучшими тренерами которые научат:
+                        Готовьтесь только <br>с лучшими тренерами, которые научат:
                     </h3>
 
                     <div class="row">
@@ -240,7 +249,7 @@
                                 <img class="be-ready__block-image" src="/images/icons/strategy-2.png" alt="">
 
                                 <p class="be-ready__block-subtitle m-0 p-0 ml-4">
-                                    Стратегии и тактики к подготовки к экзамену
+                                    Стратегии и тактике подготовки к экзамену
                                 </p>
                             </div>
                         </div>
@@ -293,7 +302,7 @@
             </div>
 
             <p class="be-ready__bottom-name mt-5 d-none d-sm-block">
-                Хаджимуратов Нурсултан<br>Главный тренер Академии GKB
+                Хаджимуратов Нурсултан,<br>Главный тренер Академии GKB
             </p>
         </div>
     </div>
@@ -390,7 +399,7 @@
                 <div class="col-md-8 p-2 ">
                     <div class="info-details d-flex flex-column justify-content-center">
                         <p class="text-white">
-                            Обладатель бронозовой медали Международной Математической Олимпиады(International Mathemaics Olympiad(Тайланд,2015)), бронозовая медаль Азиатской Тихоокеанской математической олимпиды, серебряной медали Юниорской Балканской олимпиады
+                            Обладатель бронозовой медали Международной Математической Олимпиады(International Mathemaics Olympiad(Тайланд,2015), бронозовая медаль Азиатской Тихоокеанской математической олимпиды, серебряной медали Юниорской Балканской олимпиады
                         </p>
 
                         <h3></h3>
@@ -408,7 +417,7 @@
                             </h4>
                         </div>
 
-                        <img src="/images/teachers/asyl.jpg" alt="">
+                        <img src="/images/teachers/asyl.jpeg" alt="">
 
                         <div class="small-circle"></div>
 
@@ -419,7 +428,7 @@
                 <div class="col-md-8 p-2 ">
                     <div class="info-details d-flex flex-column justify-content-center">
                         <p class="text-white">
-                            Призер республиканской олимпиады по химии(бронза 2013). Обладатель золотой медали областной олимпиады по химии,серебряной медали международного соревнования по проектом(г. Байконур), закончил UCL-Foundation, Nazarbayev University(2014-2015).В данное время студент 3 курса КазНУ, занимается исследательской работой по катализу у Dr.Andrey Khalimon
+                            Призер республиканской олимпиады по химии(бронза 2013). Обладатель золотой медали областной олимпиады по химии,серебряной медали международного соревнования по проектом(г. Байконур), закончил UCL-Foundation, Nazarbayev University(2014-2015).В данное время студент 3 курса НУ, занимается исследательской работой по катализу у Dr.Andrey Khalimon
                         </p>
 
                         <h3></h3>
@@ -507,7 +516,7 @@
                 <div class="col-md-8 p-2 ">
                     <div class="info-details d-flex flex-column justify-content-center">
                         <p class="text-white">
-                            Почетный работник образования Республики Казахстан.Директор Назарбаев Интеллектуальной школы физико-математического напровление г.Талдыкорган. Председатель общественого Совета директоров Назарбаев Интелектуальной школы.Кандидат педагогических наук.Профессор Российской Академии естествознания.Обладатель нагрудного знака Ы.Алтынсарина.
+                            Почетный работник образования Республики Казахстан.Директор Назарбаев Интеллектуальной школы физико-математического направление г.Талдыкорган. Председатель общественого Совета директоров Назарбаев Интелектуальной школы.Кандидат педагогических наук.Профессор Российской Академии естествознания.Обладатель нагрудного знака Ы.Алтынсарина.
                         </p>
 
                         <h3></h3>
@@ -621,17 +630,8 @@
 
         <div class="container">
             <div class="row">
-                <div class="board-middle col-md-6">
-                    <div class="w-100 d-flex align-items-center justify-content-center">
-                        <img src="/images/icons/calendar.png" alt="" class="board-middle__image">
 
-                        <p class="board-middle__text m-0 p-0 ml-4">
-                            1 - 12 Июня
-                        </p>
-                    </div>
-                </div>
-
-                <div class="board-middle col-md-6">
+                <div class="board-middle col-md-12">
                     <div class="w-100 d-flex align-items-center justify-content-center">
                         <img src="/images/icons/university.png" alt="" class="board-middle__image">
 
@@ -771,15 +771,15 @@
                                     </p>
 
                                     <p class="board-block__group-text m-0 p-0">
+                                        Понедельник
+                                    </p>
+
+                                    <p class="board-block__group-text m-0 p-0">
                                         Вторник
                                     </p>
 
                                     <p class="board-block__group-text m-0 p-0">
                                         Среда
-                                    </p>
-
-                                    <p class="board-block__group-text m-0 p-0">
-                                        Четверг
                                     </p>
 
 
@@ -805,15 +805,15 @@
                                     </p>
 
                                     <p class="board-block__group-text m-0 p-0">
+                                        Понедельник
+                                    </p>
+
+                                    <p class="board-block__group-text m-0 p-0">
                                         Вторник
                                     </p>
 
                                     <p class="board-block__group-text m-0 p-0">
                                         Среда
-                                    </p>
-
-                                    <p class="board-block__group-text m-0 p-0">
-                                        Четверг
                                     </p>
 
 
@@ -892,6 +892,12 @@
                         <p class="board-block__subtitle m-0 p-0">
                             Расписание
                         </p>
+                        <ul>
+                            <li>
+                                Занятия проходят ежедневно
+                                с понедельника по субботу (включительно)
+                            </li>
+                        </ul>
 
                         <div class="row mt-3">
                             <div class="col-md-4 board-block__group">
@@ -899,35 +905,6 @@
                                     <p class="board-block__group-text m-0 p-0">
                                         1 Группа
                                     </p>
-
-                                    <p class="board-block__group-text m-0 p-0 mt-4">
-                                        <strong>Дни:</strong>
-                                    </p>
-
-                                    <p class="board-block__group-text m-0 p-0">
-                                        Понедельник
-                                    </p>
-
-                                    <p class="board-block__group-text m-0 p-0">
-                                        Вторник
-                                    </p>
-
-                                    <p class="board-block__group-text m-0 p-0">
-                                        Среда
-                                    </p>
-
-                                    <p class="board-block__group-text m-0 p-0">
-                                        Четверг
-                                    </p>
-
-                                    <p class="board-block__group-text m-0 p-0">
-                                        Пятница
-                                    </p>
-
-                                    <p class="board-block__group-text m-0 p-0">
-                                        Суббота
-                                    </p>
-
 
                                     <p class="board-block__group-text m-0 p-0 mt-4">
                                         <strong>Время:</strong>
@@ -947,35 +924,6 @@
                                     </p>
 
                                     <p class="board-block__group-text m-0 p-0 mt-4">
-                                        <strong>Дни:</strong>
-                                    </p>
-
-                                    <p class="board-block__group-text m-0 p-0">
-                                        Понедельник
-                                    </p>
-
-                                    <p class="board-block__group-text m-0 p-0">
-                                        Вторник
-                                    </p>
-
-                                    <p class="board-block__group-text m-0 p-0">
-                                        Среда
-                                    </p>
-
-                                    <p class="board-block__group-text m-0 p-0">
-                                        Четверг
-                                    </p>
-
-                                    <p class="board-block__group-text m-0 p-0">
-                                        Пятница
-                                    </p>
-
-                                    <p class="board-block__group-text m-0 p-0">
-                                        Суббота
-                                    </p>
-
-
-                                    <p class="board-block__group-text m-0 p-0 mt-4">
                                         <strong>Время:</strong>
                                     </p>
 
@@ -991,35 +939,6 @@
                                     <p class="board-block__group-text m-0 p-0">
                                         3 Группа
                                     </p>
-
-                                    <p class="board-block__group-text m-0 p-0 mt-4">
-                                        <strong>Дни:</strong>
-                                    </p>
-
-                                    <p class="board-block__group-text m-0 p-0">
-                                        Понедельник
-                                    </p>
-
-                                    <p class="board-block__group-text m-0 p-0">
-                                        Вторник
-                                    </p>
-
-                                    <p class="board-block__group-text m-0 p-0">
-                                        Среда
-                                    </p>
-
-                                    <p class="board-block__group-text m-0 p-0">
-                                        Четверг
-                                    </p>
-
-                                    <p class="board-block__group-text m-0 p-0">
-                                        Пятница
-                                    </p>
-
-                                    <p class="board-block__group-text m-0 p-0">
-                                        Суббота
-                                    </p>
-
 
                                     <p class="board-block__group-text m-0 p-0 mt-4">
                                         <strong>Время:</strong>
@@ -1057,41 +976,19 @@
                             Расписание
                         </p>
 
+                        <ul>
+                            <li>
+                                Занятия проходят ежедневно
+                                с понедельника по субботу (включительно)
+                            </li>
+                        </ul>
+
                         <div class="row mt-3">
                             <div class="col-md-4 board-block__group">
                                 <div class="w-100 d-flex flex-column align-items-center pb-5">
                                     <p class="board-block__group-text m-0 p-0">
                                         1 Группа
                                     </p>
-
-                                    <p class="board-block__group-text m-0 p-0 mt-4">
-                                        <strong>Дни:</strong>
-                                    </p>
-
-                                    <p class="board-block__group-text m-0 p-0">
-                                        Понедельник
-                                    </p>
-
-                                    <p class="board-block__group-text m-0 p-0">
-                                        Вторник
-                                    </p>
-
-                                    <p class="board-block__group-text m-0 p-0">
-                                        Среда
-                                    </p>
-
-                                    <p class="board-block__group-text m-0 p-0">
-                                        Четверг
-                                    </p>
-
-                                    <p class="board-block__group-text m-0 p-0">
-                                        Пятница
-                                    </p>
-
-                                    <p class="board-block__group-text m-0 p-0">
-                                        Суббота
-                                    </p>
-
 
                                     <p class="board-block__group-text m-0 p-0 mt-4">
                                         <strong>Время:</strong>
@@ -1114,31 +1011,6 @@
                                         <strong>Дни:</strong>
                                     </p>
 
-                                    <p class="board-block__group-text m-0 p-0">
-                                        Понедельник
-                                    </p>
-
-                                    <p class="board-block__group-text m-0 p-0">
-                                        Вторник
-                                    </p>
-
-                                    <p class="board-block__group-text m-0 p-0">
-                                        Среда
-                                    </p>
-
-                                    <p class="board-block__group-text m-0 p-0">
-                                        Четверг
-                                    </p>
-
-                                    <p class="board-block__group-text m-0 p-0">
-                                        Пятница
-                                    </p>
-
-                                    <p class="board-block__group-text m-0 p-0">
-                                        Суббота
-                                    </p>
-
-
                                     <p class="board-block__group-text m-0 p-0 mt-4">
                                         <strong>Время:</strong>
                                     </p>
@@ -1158,30 +1030,6 @@
 
                                     <p class="board-block__group-text m-0 p-0 mt-4">
                                         <strong>Дни:</strong>
-                                    </p>
-
-                                    <p class="board-block__group-text m-0 p-0">
-                                        Понедельник
-                                    </p>
-
-                                    <p class="board-block__group-text m-0 p-0">
-                                        Вторник
-                                    </p>
-
-                                    <p class="board-block__group-text m-0 p-0">
-                                        Среда
-                                    </p>
-
-                                    <p class="board-block__group-text m-0 p-0">
-                                        Четверг
-                                    </p>
-
-                                    <p class="board-block__group-text m-0 p-0">
-                                        Пятница
-                                    </p>
-
-                                    <p class="board-block__group-text m-0 p-0">
-                                        Суббота
                                     </p>
 
 
@@ -1333,11 +1181,11 @@
 
             <div class="col-md-3 col-sm-6">
                 <div class="d-flex flex-column mt-5 mt-md-0">
-                    <a href="#">
-                        <img class="footer-image" src="/images/icons/logo-2.png" alt="">
-                    </a>
+                    <h3 class="footer-title m-0 p-0">
+                        Контакты
+                    </h3>
 
-                    <p class="footer-text m-0 p-0">
+                    <p class="footer-text m-0 p-0 mt-3">
                         Адрес: Проспект Абая, 10а<br>(уг. ул. Фурманова)
                     </p>
 

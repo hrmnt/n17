@@ -1,19 +1,55 @@
 jQuery(document).ready(function($){
+    var header = document.querySelector("#header"), origOffsetY = header.offsetTop, headerIsFixed = !1;
+    var main = document.querySelector("#main").offsetTop;
 
     AOS.init();
     var cfg = {
             scrollDuration : 800, // smoothscroll duration
         };
 
+    function onScroll() {
+        if (window.scrollY >= main) {
+            $(header).addClass("top");
+        }
+        if (window.scrollY <= main) {
+            $(header).removeClass("top");
+        }
+    }
+
+    // $("#menumenu li a").click(function() {
+    //     $("#menumenu li").removeClass('selected');
+    //     $(this).parent().addClass('selected');
+    // });
+
+
     /* Owl Carousel
     * ------------------------------------------------------ */
     var clOwlCarousel = function(){
-        $('.teacher').owlCarousel({
+        $('.main-background').owlCarousel({
             loop: true,
             nav:true,
             autoplay: true,
             autoplayTimeout: 5000,
             autoplayHoverPause: true,
+            responsive:{
+                0:{
+                    items:1
+                },
+                600:{
+                    items:1
+                },
+                1000:{
+                    items:1
+                }
+            }
+        });
+
+        $('.teacher').owlCarousel({
+            loop: true,
+            nav:true,
+            // autoplay: true,
+            // autoplayTimeout: 5000,
+            // autoplayHoverPause: true,
             navText: ["<img src='/images/icons/back.png' style='height: 1.8rem; width: auto'>","<img src='/images/icons/back.png' style='height: 1.8rem; width: auto; transform: rotate(180deg'>"],
             responsive:{
                 0:{
@@ -114,18 +150,22 @@ jQuery(document).ready(function($){
     };
 
 
+    var clOthers = function(){
+        // var div = document.getElementById("main");
+        // console.log(div.offsetTop);
+
+        document.addEventListener("scroll", onScroll);
+    };
     /* Other Functions
     * ------------------------------------------------------ */
-    var clOthers = function(){
-
-    };
 
     (function ssInit() {
-        // clOthers();
         // clPreloader();
         clSmoothScroll();
         clEmailJs();
         clOwlCarousel();
         // clBackToTop();
+        clOthers();
+
     })();
 });
