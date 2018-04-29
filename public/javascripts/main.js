@@ -5,12 +5,17 @@ jQuery(document).ready(function($){
     /* Owl Carousel
     * ------------------------------------------------------ */
     var clOwlCarousel = function(){
+
         $('.main-background').owlCarousel({
             loop: true,
-            nav:true,
+            // nav: true,
+            dots: true,
             autoplay: true,
-            autoplayTimeout: 5000,
+            autoplayTimeout: 4000,
             autoplayHoverPause: true,
+            animateOut: 'fadeOut',
+            touchDrag  : false,
+            mouseDrag  : false,
             responsive:{
                 0:{
                     items:1
@@ -30,6 +35,7 @@ jQuery(document).ready(function($){
             // autoplay: true,
             // autoplayTimeout: 5000,
             // autoplayHoverPause: true,
+
             navText: ["<img src='/images/icons/back.png' style='height: 1.8rem; width: auto'>","<img src='/images/icons/back.png' style='height: 1.8rem; width: auto; transform: rotate(180deg'>"],
             responsive:{
                 0:{
@@ -76,10 +82,19 @@ jQuery(document).ready(function($){
             e.preventDefault();
             e.stopPropagation();
 
-            $('html, body').stop().animate({
-                'scrollTop': $target.offset().top - 80
-            },
-                cfg.scrollDuration, 'swing').promise();
+            if(window.matchMedia('(max-width: 991px)').matches)
+            {
+                $('html, body').stop().animate({
+                        'scrollTop': $target.offset().top
+                    },
+                    cfg.scrollDuration, 'swing').promise();
+            }
+            else {
+                $('html, body').stop().animate({
+                        'scrollTop': $target.offset().top - 110
+                    },
+                    cfg.scrollDuration, 'swing').promise();
+            }
         });
 
     };
@@ -109,27 +124,59 @@ jQuery(document).ready(function($){
         });
     };
 
-    /* Back to Top
+    /* Menu on Scrolldown
     * ------------------------------------------------------ */
-    var clBackToTop = function() {
+    var clMenuOnScrolldown = function() {
 
-        var pxShow  = 500,         // height on which the button will show
-            fadeInTime  = 400,         // how slow/fast you want the button to show
-            fadeOutTime = 400,         // how slow/fast you want the button to hide
-            scrollSpeed = 300,         // how slow/fast you want the button to scroll to top. can be a value, 'slow', 'normal' or 'fast'
-            goTopButton = $(".go-top");
+        var menuTrigger = $('.header-menu-toggle');
 
-        // Show or hide the sticky footer button
         $(window).on('scroll', function() {
-            if ($(window).scrollTop() >= pxShow) {
-                goTopButton.fadeIn(fadeInTime);
-            } else {
-                goTopButton.fadeOut(fadeOutTime);
+
+            if ($(window).scrollTop() > 150) {
+                menuTrigger.addClass('opaque');
             }
+            else {
+                menuTrigger.removeClass('opaque');
+            }
+
         });
     };
 
+    /* OffCanvas Menu
+     * ------------------------------------------------------ */
+    var clOffCanvas = function() {
 
+        var menuTrigger     = $('.header-menu-toggle'),
+            nav             = $('.header-nav'),
+            closeButton     = nav.find('.header-nav__close'),
+            siteBody        = $('body'),
+            mainContents    = $('section, footer');
+
+        // open-close menu by clicking on the menu icon
+        menuTrigger.on('click', function(e){
+            e.preventDefault();
+            // menuTrigger.toggleClass('is-clicked');
+            siteBody.toggleClass('menu-is-open');
+        });
+
+        // close menu by clicking the close button
+        closeButton.on('click', function(e){
+            e.preventDefault();
+            menuTrigger.trigger('click');
+        });
+
+        // close menu clicking outside the menu itself
+        siteBody.on('click', function(e){
+            if( !$(e.target).is('.header-nav, .header-nav__content, .header-menu-toggle, .header-menu-toggle span') ) {
+                // menuTrigger.removeClass('is-clicked');
+                siteBody.removeClass('menu-is-open');
+            }
+        });
+
+    };
+
+    /* Other Functions
+        * ------------------------------------------------------ */
     var clOthers = function(){
         AOS.init();
 
@@ -144,45 +191,80 @@ jQuery(document).ready(function($){
                 $("a[href$='main']").addClass("active");
             }
 
-            if (window.scrollY <= main) {
+            if (window.scrollY + convertRemToPixels(11) <= main) {
                 $(header).removeClass("top");
             }
 
-            if (window.scrollY + 110 < beready) {
+            if (window.scrollY + convertRemToPixels(11) < beready) {
                 $("a[href$='beready']").removeClass("active");
                 $("a[href$='request']").addClass("active");
             }
 
-            if (window.scrollY + 110 >= beready && window.scrollY + 110 <= teachers) {
+            if (window.scrollY + convertRemToPixels(11) >= beready && window.scrollY + convertRemToPixels(11) <= teachers) {
                 $("a[href$='request']").removeClass("active");
                 $("a[href$='teachers']").removeClass("active");
                 $("a[href$='beready']").addClass("active");
             }
 
-            if(window.scrollY + 110 > teachers){
+            if(window.scrollY > teachers){
                 $("a[href$='beready']").removeClass("active");
                 $("a[href$='teachers']").addClass("active");
             }
         }
 
-        // $('ul li a').click(function(){
-        //     $('a').removeClass('active');
-        //     $(this).addClass("active");
-        // });
+        function convertRemToPixels(rem) {
+            return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
+        }
 
+        function validate_int(myEvento) {
+            return (myEvento.charCode >= 48 && myEvento.charCode <= 57) || myEvento.keyCode == 9 || myEvento.keyCode == 10 || myEvento.keyCode == 13 || myEvento.keyCode == 8 || myEvento.keyCode == 116 || myEvento.keyCode == 46 || (myEvento.keyCode <= 40 && myEvento.keyCode >= 37);
+        }
+
+        function phone_number_mask() {
+            var myMask = "_ (___) ___-____";
+            var myCaja = document.getElementById("phone");
+            var myText = "";
+            var myNumbers = [];
+            var myOutPut = "";
+            var theLastPos = 1;
+            myText = myCaja.value;
+            //get numbers
+            for (var i = 0; i < myText.length; i++) {
+                if (!isNaN(myText.charAt(i)) && myText.charAt(i) != " ") {
+                    myNumbers.push(myText.charAt(i));
+                }
+            }
+            //write over mask
+            for (var j = 0; j < myMask.length; j++) {
+                if (myMask.charAt(j) == "_") { //replace "_" by a number
+                    if (myNumbers.length == 0)
+                        myOutPut = myOutPut + myMask.charAt(j);
+                    else {
+                        myOutPut = myOutPut + myNumbers.shift();
+                        theLastPos = j + 1; //set caret position
+                    }
+                } else {
+                    myOutPut = myOutPut + myMask.charAt(j);
+                }
+            }
+            document.getElementById("phone").value = myOutPut;
+            document.getElementById("phone").setSelectionRange(theLastPos, theLastPos);
+        }
+
+        document.getElementById("phone").onkeypress = validate_int;
+        document.getElementById("phone").onkeyup = phone_number_mask;
 
 
         document.addEventListener("scroll", onScroll);
     };
-    /* Other Functions
-    * ------------------------------------------------------ */
 
     (function ssInit() {
-        // clPreloader();
+        clPreloader();
+        clMenuOnScrolldown();
+        clOffCanvas();
         clSmoothScroll();
         clEmailJs();
         clOwlCarousel();
-        // clBackToTop();
         clOthers();
 
     })();
