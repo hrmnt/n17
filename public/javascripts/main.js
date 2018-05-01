@@ -63,10 +63,6 @@ jQuery(document).ready(function($){
 
             setTimeout(function(){
                 $(this).scrollTop(0);
-                $('html, body')
-                    .css({
-                        'overflow': 'auto'
-                    })
             }, 200);
         });
     };
@@ -87,7 +83,11 @@ jQuery(document).ready(function($){
                 $('html, body').stop().animate({
                         'scrollTop': $target.offset().top
                     },
-                    cfg.scrollDuration, 'swing').promise();
+                    cfg.scrollDuration, 'swing').promise().done(function() {
+                    if ($('body').hasClass('menu-is-open')) {
+                        $('.header-menu-toggle').trigger('click');
+                    }
+                });
             }
             else {
                 $('html, body').stop().animate({
@@ -195,18 +195,18 @@ jQuery(document).ready(function($){
                 $(header).removeClass("top");
             }
 
-            if (window.scrollY + convertRemToPixels(11) < beready) {
+            if (window.scrollY < beready) {
                 $("a[href$='beready']").removeClass("active");
                 $("a[href$='request']").addClass("active");
             }
 
-            if (window.scrollY + convertRemToPixels(11) >= beready && window.scrollY + convertRemToPixels(11) <= teachers) {
+            if (window.scrollY + convertRemToPixels(11) >= beready) {
                 $("a[href$='request']").removeClass("active");
                 $("a[href$='teachers']").removeClass("active");
                 $("a[href$='beready']").addClass("active");
             }
 
-            if(window.scrollY > teachers){
+            if(window.scrollY + convertRemToPixels(11) >= teachers){
                 $("a[href$='beready']").removeClass("active");
                 $("a[href$='teachers']").addClass("active");
             }
@@ -266,6 +266,5 @@ jQuery(document).ready(function($){
         clEmailJs();
         clOwlCarousel();
         clOthers();
-
     })();
 });
