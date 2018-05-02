@@ -328,25 +328,50 @@
       }
     }
   }
+  .owl-nav {
+    .owl-prev {
+      position: absolute;
+      top: calc(50% - 20px);
+      height: 4rem;
+      width: 4rem;
+      background: $first;
+      left: 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .owl-next{
+      position: absolute;
+      top: calc(50% - 20px);
+      height: 4rem;
+      width: 4rem;
+      background: $first;
+      right: 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 
   .owl-dots {
     position: absolute;
     width: 100%;
-    bottom: 2rem;
+    bottom: 4rem;
     left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     .owl-dot {
-      height: 0.8rem;
-      width: 0.8rem;
+      height: 1.2rem;
+      width: 1.2rem;
       margin: 0 1rem 0 1rem;
       background-color: $third;
       border-radius: 50%;
     }
     .active {
-      height: 1.4rem;
-      width: 1.4rem;
+      height: 1.8rem;
+      width: 1.8rem;
       background-color: $first;
     }
   }
@@ -824,7 +849,6 @@
     font-size: 4rem;
     font-weight: 600;
 
-    margin-bottom: 2rem;
     color: white;
     @media (max-width: 576px){
       font-size: 2.8rem;
@@ -999,6 +1023,7 @@
     .board-top__title {
       font-size: 4.4rem;
       font-weight: 600;
+      color: $sixth;
       @media (max-width: 576px){
         font-size: 2.8rem;
       }
@@ -1104,6 +1129,10 @@
   .board-block__group {
     &.center {
       border-left: 1px solid $sixth;
+      //border-right: 1px solid $sixth;
+    }
+    &.center-top {
+      border-left: 1px solid $sixth;
       border-right: 1px solid $sixth;
     }
     .board-block__group-text {
@@ -1122,6 +1151,7 @@
     .board-top__title {
       font-size: 4.4rem;
       font-weight: 600;
+      color: $sixth;
       @media (max-width: 576px){
         font-size: 2.8rem;
       }

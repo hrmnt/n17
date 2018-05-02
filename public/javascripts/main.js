@@ -8,7 +8,9 @@ jQuery(document).ready(function($){
 
         $('.main-background').owlCarousel({
             loop: true,
-            // nav: true,
+            nav: true,
+            navText: ["<img src='/images/icons/back.png' style='height: 2.4rem; width: auto'>","<img src='/images/icons/back.png' style='height: 2.4rem; width: auto; transform: rotate(180deg'>"],
+
             dots: true,
             autoplay: true,
             autoplayTimeout: 4000,
@@ -35,7 +37,6 @@ jQuery(document).ready(function($){
             // autoplay: true,
             // autoplayTimeout: 5000,
             // autoplayHoverPause: true,
-
             navText: ["<img src='/images/icons/back.png' style='height: 1.8rem; width: auto'>","<img src='/images/icons/back.png' style='height: 1.8rem; width: auto; transform: rotate(180deg'>"],
             responsive:{
                 0:{
@@ -116,7 +117,8 @@ jQuery(document).ready(function($){
             $(".request__form-submit").val("Отправка...");
 
             emailjs.sendForm(service_id,template_id,"myform").then(function(){
-                $(".request__form-submit").val("Ваша заявка успешно отправлена...");
+                $(".request__form-submit").val("Ваша заявка успешно отправлена!");
+                $(".request__form-submit").prop('disabled', false);
             }, function(err) {
                 $(".request__form-submit").val("Ошибка! Заявка не отправлена, повторите позже!");
             });
@@ -221,24 +223,26 @@ jQuery(document).ready(function($){
         }
 
         function phone_number_mask() {
-            var myMask = "_ (___) ___-____";
+            var myMask = "(___) ___-____";
+            var suffix = "+7";
             var myCaja = document.getElementById("phone");
             var myText = "";
             var myNumbers = [];
             var myOutPut = "";
             var theLastPos = 1;
-            myText = myCaja.value;
+            myText = myCaja.value.substring(0);
             //get numbers
             for (var i = 0; i < myText.length; i++) {
-                if (!isNaN(myText.charAt(i)) && myText.charAt(i) != " ") {
+                if (!isNaN(myText.charAt(i)) && myText.charAt(i) != " " && i != 0) {
                     myNumbers.push(myText.charAt(i));
                 }
             }
             //write over mask
             for (var j = 0; j < myMask.length; j++) {
                 if (myMask.charAt(j) == "_") { //replace "_" by a number
-                    if (myNumbers.length == 0)
+                    if (myNumbers.length == 0){
                         myOutPut = myOutPut + myMask.charAt(j);
+                    }
                     else {
                         myOutPut = myOutPut + myNumbers.shift();
                         theLastPos = j + 1; //set caret position
@@ -247,7 +251,7 @@ jQuery(document).ready(function($){
                     myOutPut = myOutPut + myMask.charAt(j);
                 }
             }
-            document.getElementById("phone").value = myOutPut;
+            document.getElementById("phone").value = suffix + myOutPut;
             document.getElementById("phone").setSelectionRange(theLastPos, theLastPos);
         }
 
