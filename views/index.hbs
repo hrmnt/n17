@@ -19,9 +19,11 @@
 
     <!-- Bootstrap CSS -->
     <link rel='stylesheet' href='/libs/normalize-css/normalize.css'/>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+
     <link rel="stylesheet" href="/libs/owl.carousel/dist/assets/owl.carousel.min.css"/>
-    <link rel="stylesheet" href="libs/aos/dist/aos.css" />
+    <link rel="stylesheet" href="/libs/aos/dist/aos.css"/>
+
     <link rel='stylesheet' href='/stylesheets/style.css'/>
 </head>
 
@@ -343,7 +345,7 @@
                             </h3>
 
                             <p class="m-0 p-0 mt-4">
-                                Нашими тренерами завоевано <span>более 150 медалей</span> самых престижных международных олимпиад. Только в этом году ими подготовлено <span>36 призеров</span>.
+                                Нашими тренерами завоевано <span>более 150 медалей</span> самых престижных международных олимпиад. Только в этом году ими подготовлено <span>36 призеров</span>
                             </p>
                         </div>
                     </div>
@@ -355,7 +357,7 @@
                             </h3>
 
                             <p class="m-0 p-0 mt-4">
-                                Самые сильные физико-математические школы страны -  <span>РФМШ, НИШ ФМН Алматы, <br>165 технический лицей, БИЛ (Аксай КТЛ), 90 лицей </span> готовятся к олимпиаде с <span>НАШИМИ ТРЕНЕРАМИ</span>.
+                                Самые сильные физико-математические школы страны -  <span>РФМШ, НИШ ФМН Алматы, <br>165 технический лицей, БИЛ (Аксай КТЛ), 90 лицей </span> готовятся к олимпиаде с <span>НАШИМИ ТРЕНЕРАМИ</span>
                             </p>
                         </div>
                     </div>
@@ -367,7 +369,7 @@
                             </h3>
 
                             <p class="m-0 p-0 mt-4">
-                                Успешно справились с вступительными тестами <span>в НИШ</span>.
+                                Успешно справились с вступительными тестами <span>в НИШ</span>
                             </p>
                         </div>
                     </div>
@@ -406,7 +408,7 @@
             <form method="post" id="myform">
                 <div class="form-group mt-5 d-flex flex-column flex-sm-row justify-content-center">
                     <input type="text" name="contactName" class="request__form-input border-0 p-3 mr-3" placeholder="Имя" required="" autocomplete="off">
-                    <input type="text" name="contactPhone" class="request__form-input border-0 p-3 mr-3 mt-4 mt-sm-0" placeholder="+7 (702) 123-4556" value="+7" required="required" autocomplete="off">
+                    <input type="text" name="contactPhone" id="phone" class="request__form-input border-0 p-3 mr-3 mt-4 mt-sm-0" placeholder="+7 (702) 123-4567" required="required" autocomplete="off">
                     <input type="submit" class="btn request__form-submit border-0 p-3 px-5 text-white mt-4 mt-sm-0" value="Оставить заявку">
                 </div>
             </form>
@@ -1681,12 +1683,16 @@
     </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="/javascripts/jquery-3.3.1.min.js"></script>
+<script src="/javascripts/email.min.js"></script>
+<script src="/javascripts/popper.min.js"></script>
+<script src="/javascripts/bootstrap.min.js"></script>
+
 <script src="/libs/aos/dist/aos.js"></script>
-<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 <script src="/libs/owl.carousel/dist/owl.carousel.min.js"></script>
+
+<script src="/javascripts/jquery.inputmask.bundle.js"></script>
+<script src="/javascripts/phone.min.js"></script>
 <script src="/javascripts/main.js"></script>
 
 </body>
