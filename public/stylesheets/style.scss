@@ -831,7 +831,9 @@
   position: relative;
 
   padding: 7rem 0;
-
+  @media (max-width: 576px){
+    padding: 7rem 0 0 0;
+  }
   .comments-background {
     position: absolute;
     top: 0;
@@ -994,8 +996,7 @@
 
       line-height: 2.6rem;
       color: #232628;
-
-      margin-bottom: 2rem;
+      margin-bottom: 0!important;
     }
 
     p, h3 {
@@ -1129,12 +1130,12 @@
   .board-block__group {
     &.center {
       border-left: 1px solid $sixth;
-      //border-right: 1px solid $sixth;
-    }
-    &.center-top {
-      border-left: 1px solid $sixth;
       border-right: 1px solid $sixth;
     }
+    //&.center-top {
+    //  border-left: 1px solid $sixth;
+    //  border-right: 1px solid $sixth;
+    //}
     .board-block__group-text {
       font-size: 1.6rem;
       font-weight: 400;

@@ -34,6 +34,7 @@ jQuery(document).ready(function($){
         $('.teacher').owlCarousel({
             loop: true,
             nav:true,
+            dots: false,
             // autoplay: true,
             // autoplayTimeout: 5000,
             // autoplayHoverPause: true,
@@ -92,7 +93,7 @@ jQuery(document).ready(function($){
             }
             else {
                 $('html, body').stop().animate({
-                        'scrollTop': $target.offset().top - 110
+                        'scrollTop': $target.offset().top - 60
                     },
                     cfg.scrollDuration, 'swing').promise();
             }
@@ -218,45 +219,45 @@ jQuery(document).ready(function($){
             return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
         }
 
-        function validate_int(myEvento) {
-            return (myEvento.charCode >= 48 && myEvento.charCode <= 57) || myEvento.keyCode == 9 || myEvento.keyCode == 10 || myEvento.keyCode == 13 || myEvento.keyCode == 8 || myEvento.keyCode == 116 || myEvento.keyCode == 46 || (myEvento.keyCode <= 40 && myEvento.keyCode >= 37);
-        }
-
-        function phone_number_mask() {
-            var myMask = "(___) ___-____";
-            var suffix = "+7";
-            var myCaja = document.getElementById("phone");
-            var myText = "";
-            var myNumbers = [];
-            var myOutPut = "";
-            var theLastPos = 1;
-            myText = myCaja.value.substring(0);
-            //get numbers
-            for (var i = 0; i < myText.length; i++) {
-                if (!isNaN(myText.charAt(i)) && myText.charAt(i) != " " && i != 0) {
-                    myNumbers.push(myText.charAt(i));
-                }
-            }
-            //write over mask
-            for (var j = 0; j < myMask.length; j++) {
-                if (myMask.charAt(j) == "_") { //replace "_" by a number
-                    if (myNumbers.length == 0){
-                        myOutPut = myOutPut + myMask.charAt(j);
-                    }
-                    else {
-                        myOutPut = myOutPut + myNumbers.shift();
-                        theLastPos = j + 1; //set caret position
-                    }
-                } else {
-                    myOutPut = myOutPut + myMask.charAt(j);
-                }
-            }
-            document.getElementById("phone").value = suffix + myOutPut;
-            document.getElementById("phone").setSelectionRange(theLastPos, theLastPos);
-        }
-
-        document.getElementById("phone").onkeypress = validate_int;
-        document.getElementById("phone").onkeyup = phone_number_mask;
+        // function validate_int(myEvento) {
+        //     return (myEvento.charCode >= 48 && myEvento.charCode <= 57) || myEvento.keyCode == 9 || myEvento.keyCode == 10 || myEvento.keyCode == 13 || myEvento.keyCode == 8 || myEvento.keyCode == 116 || myEvento.keyCode == 46 || (myEvento.keyCode <= 40 && myEvento.keyCode >= 37);
+        // }
+        //
+        // function phone_number_mask() {
+        //     var myMask = "(___) ___-____";
+        //     var suffix = "+7";
+        //     var myCaja = document.getElementById("phone");
+        //     var myText = "";
+        //     var myNumbers = [];
+        //     var myOutPut = "";
+        //     var theLastPos = 1;
+        //     myText = myCaja.value.substring(0);
+        //     //get numbers
+        //     for (var i = 0; i < myText.length; i++) {
+        //         if (!isNaN(myText.charAt(i)) && myText.charAt(i) != " " && i != 0) {
+        //             myNumbers.push(myText.charAt(i));
+        //         }
+        //     }
+        //     //write over mask
+        //     for (var j = 0; j < myMask.length; j++) {
+        //         if (myMask.charAt(j) == "_") { //replace "_" by a number
+        //             if (myNumbers.length == 0){
+        //                 myOutPut = myOutPut + myMask.charAt(j);
+        //             }
+        //             else {
+        //                 myOutPut = myOutPut + myNumbers.shift();
+        //                 theLastPos = j + 1; //set caret position
+        //             }
+        //         } else {
+        //             myOutPut = myOutPut + myMask.charAt(j);
+        //         }
+        //     }
+        //     document.getElementById("phone").value = suffix + myOutPut;
+        //     document.getElementById("phone").setSelectionRange(theLastPos, theLastPos);
+        // }
+        //
+        // document.getElementById("phone").onkeypress = validate_int;
+        // document.getElementById("phone").onkeyup = phone_number_mask;
 
 
         document.addEventListener("scroll", onScroll);
