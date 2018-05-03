@@ -92,10 +92,19 @@ jQuery(document).ready(function($){
                 });
             }
             else {
-                $('html, body').stop().animate({
-                        'scrollTop': $target.offset().top - 60
-                    },
-                    cfg.scrollDuration, 'swing').promise();
+
+                if (target == '#schedule'){
+                    $('html, body').stop().animate({
+                            'scrollTop': $target.offset().top + 20
+                        },
+                        cfg.scrollDuration, 'swing').promise();
+                }
+                else {
+                    $('html, body').stop().animate({
+                            'scrollTop': $target.offset().top - 60
+                        },
+                        cfg.scrollDuration, 'swing').promise();
+                }
             }
         });
 
