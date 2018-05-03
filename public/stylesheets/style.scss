@@ -853,6 +853,10 @@
       @media (max-width: 767px){
         font-size: 2rem;
       }
+
+      @media (max-width: 576px){
+        width: 60%;
+      }
     }
   }
 }
@@ -862,9 +866,11 @@
   position: relative;
 
   padding: 7rem 0;
+
   @media (max-width: 576px){
     padding: 7rem 0 0 0;
   }
+
   .comments-background {
     position: absolute;
     top: 0;
