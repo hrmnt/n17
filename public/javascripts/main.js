@@ -92,19 +92,15 @@ jQuery(document).ready(function($){
                 });
             }
             else {
+                var number = 40;
+                if (target != '#scheduletwo' && target != '#schedule'){
+                    number = -60
+                }
 
-                if (target == '#schedule'){
-                    $('html, body').stop().animate({
-                            'scrollTop': $target.offset().top + 20
-                        },
-                        cfg.scrollDuration, 'swing').promise();
-                }
-                else {
-                    $('html, body').stop().animate({
-                            'scrollTop': $target.offset().top - 60
-                        },
-                        cfg.scrollDuration, 'swing').promise();
-                }
+                $('html, body').stop().animate({
+                        'scrollTop': $target.offset().top + number
+                    },
+                    cfg.scrollDuration, 'swing').promise();
             }
         });
 
