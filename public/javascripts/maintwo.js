@@ -93,14 +93,16 @@ jQuery(document).ready(function($){
             }
             else {
                 if (target == '#schedule' || target == '#summer'){
-                    $target = $('#board');
+                    target = '#board';
+                    $target = $(target);
                 }
 
                 var number = 40;
-                if (target != '#schedule'){
+                if (target != '#board'){
                     number = -60
                 }
 
+                console.log(target, number);
                 $('html, body').stop().animate({
                         'scrollTop': $target.offset().top + number
                     },
@@ -237,13 +239,13 @@ jQuery(document).ready(function($){
                 $("a[href$='teachers']").addClass("active");
             }
 
-            if(window.scrollY + maxwidth >= schedule){
+            if(window.matchMedia('(max-width: 991px)').matches && (window.scrollY + maxwidth >= schedule)){
                 $("a[href$='teachers']").removeClass("active");
                 $("a[href$='summer']").removeClass("active");
                 $("a[href$='schedule']").addClass("active");
             }
 
-            if(window.scrollY + maxwidth >= summer){
+            if(window.matchMedia('(max-width: 991px)').matches && (window.scrollY + maxwidth >= summer)){
                 $("a[href$='schedule']").removeClass("active");
                 $("a[href$='summer']").addClass("active");
             }
