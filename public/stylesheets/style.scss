@@ -359,7 +359,7 @@
         background: url("/images/backgrounds/third.jpeg") center center no-repeat;
       }
       @media (max-width: 576px){
-        background: url("/images/backgrounds/mobile3.jpeg") no-repeat;
+        background: url("/images/backgrounds/mobile2.jpeg") no-repeat;
         background-size: cover;
       }
       &.copy {
@@ -384,8 +384,23 @@
         background: url("/images/backgrounds/four.jpg") center center no-repeat;
       }
       @media (max-width: 576px){
-        background: url("/images/backgrounds/moble2.jpeg") no-repeat;
+        background: url("/images/backgrounds/four.jpg") no-repeat;
         background-size: cover;
+        background-position: center top;
+      }
+      &.copy {
+        background: url("/images/backgrounds/s_4.jpeg") no-repeat;
+        background-size: cover;
+        @media (max-width: 991px){
+          background: url("/images/backgrounds/s_4.jpeg") center center no-repeat;
+          display: none;
+        }
+        @media (max-width: 576px){
+          background: url("/images/backgrounds/s_4.jpeg") no-repeat;
+          background-size: cover;
+          display: none;
+
+        }
       }
     }
 
@@ -398,8 +413,24 @@
         background: url("/images/backgrounds/six.jpeg") center center no-repeat;
       }
       @media (max-width: 576px){
-        background: url("/images/backgrounds/mobile3.jpeg") no-repeat;
+        background: url("/images/backgrounds/six.jpeg") no-repeat;
         background-size: cover;
+        background-position: center;
+
+      }
+      &.copy {
+        background: url("/images/backgrounds/s_5.jpeg") no-repeat;
+        background-size: cover;
+        @media (max-width: 991px){
+          background: url("/images/backgrounds/s_5.jpeg") center center no-repeat;
+          background-size: cover;
+
+        }
+        @media (max-width: 576px){
+          background: url("/images/backgrounds/s_5.jpeg") no-repeat;
+          background-size: cover;
+
+        }
       }
     }
   }
@@ -510,6 +541,9 @@
     .main__text-title {
       font-size: 4.6rem;
       font-weight: 700;
+      @media (max-width: 798px) {
+        font-size: 3.6rem;
+      }
     }
 
     .main__text-subtitle {

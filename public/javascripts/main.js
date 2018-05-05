@@ -4,6 +4,13 @@ jQuery(document).ready(function($){
     };
     /* Owl Carousel
     * ------------------------------------------------------ */
+    $(document).on('click', 'a[href^="#"]', function (event) {
+        event.preventDefault();
+
+        $('html, body').animate({
+            scrollTop: $($.attr(this, 'href')).offset().top - 50
+        }, 1000);
+    });
     var clOwlCarousel = function(){
 
         $('.main-background').owlCarousel({
@@ -71,44 +78,6 @@ jQuery(document).ready(function($){
 
     /* Smooth Scrolling
     * ------------------------------------------------------ */
-    var clSmoothScroll = function() {
-
-        $('.smoothscroll').on('click', function (e) {
-            var target = this.hash,
-                $target    = $(target);
-
-            e.preventDefault();
-            e.stopPropagation();
-
-            if(window.matchMedia('(max-width: 991px)').matches)
-            {
-                $('html, body').stop().animate({
-                        'scrollTop': $target.offset().top + 10
-                    },
-                    cfg.scrollDuration, 'swing').promise().done(function() {
-                    if ($('body').hasClass('menu-is-open')) {
-                        $('.header-menu-toggle').trigger('click');
-                    }
-                });
-            }
-            else {
-                if (target == '#schedule' || target == '#summer'){
-                    $target = $('#board');
-                }
-
-                var number = 40;
-                if (target != '#schedule'){
-                    number = -60
-                }
-
-                $('html, body').stop().animate({
-                        'scrollTop': $target.offset().top + number
-                    },
-                    cfg.scrollDuration, 'swing').promise();
-            }
-        });
-
-    };
 
     /* EmailJs
     * ------------------------------------------------------ */
@@ -262,7 +231,6 @@ jQuery(document).ready(function($){
         clPreloader();
         clMenuOnScrolldown();
         clOffCanvas();
-        clSmoothScroll();
         clEmailJs();
         clOwlCarousel();
         clOthers();
