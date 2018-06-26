@@ -95,8 +95,11 @@
 
     $.get('https://api.airtable.com/v0/appsZVlM0a7C9lACJ/react-native?api_key=keyqfoByFrvIArghp&sort%5B0%5D%5Bfield%5D=Total&sort%5B0%5D%5Bdirection%5D=desc&view=Grid+view',function (response) {
         allparticipants = response.records;
-        console.log(allparticipants);
-        keys = Object.keys(allparticipants[15].fields);
+        let rigjt = allparticipants.find((item) =>{
+            let iKey = Object.keys(item.fields);
+            return iKey[0] === "Name" && iKey[iKey.length-1] ==="Total";
+        });
+        keys = Object.keys(rigjt.fields);
         keys.unshift("")
 
         keys.map((item) => $("#keys").append("   <td class=\"keys-stroke\"><p>"+item+"</p></td>"));
