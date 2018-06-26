@@ -143,6 +143,9 @@ $third: #0ea3dd;
   }
 }
 
+.lead-table::-webkit-scrollbar{
+  display: none;
+}
 .lead-table {
   margin-top: 4rem;
   @media (max-width: 798px) {
