@@ -121,7 +121,8 @@ $third: #0ea3dd;
     margin-top: 8rem;
     h2 {
       font-size: 2.6rem;
-      font-family: Montserrat;
+      font-family: HelveticaNeueCyr-Medium;
+      font-family: -apple-system, HelveticaNeueCyr-Medium, "Lucida Grande", sans-serif;
       font-weight: 400;
       margin-bottom: 1.4rem;
       span {
@@ -132,8 +133,9 @@ $third: #0ea3dd;
       width: 100%;
       border: 1px solid #f6f7fb;
       border-radius: 8px;
-      font-family: Montserrat;
-      font-size: 2rem;
+      font-family: HelveticaNeueCyr-Medium;
+      font-family: -apple-system, HelveticaNeueCyr-Medium, "Lucida Grande", sans-serif;
+      font-size: 2.2rem;
       padding: 1.4rem;
       color: #ccc;
       box-shadow: 0 0 8px #ccc;
@@ -170,12 +172,16 @@ $third: #0ea3dd;
     font-size: 2rem;
     color: #959596;
     font-family: "HelveticaNeueCyr-Medium", sans-serif;
+    font-family: -apple-system, HelveticaNeueCyr-Medium, "Lucida Grande", sans-serif;
+
     margin: 0;
     padding-top: 1.2rem;
     padding-bottom: 1.2rem;
   }
   .user-fields{
     font-family: "HelveticaNeueCyr-Light", sans-serif;
+    font-family: -apple-system, HelveticaNeueCyr-Medium, "Lucida Grande", sans-serif;
+
     padding-top: 1.2rem;
     padding-bottom: 1.2rem;
     @media (max-width: 798px) {
@@ -228,6 +234,12 @@ $third: #0ea3dd;
       }
     }
   }
+  td:nth-child(3){
+    @media (max-width:798px) {
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+  }
   td:last-child {
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
@@ -278,6 +290,8 @@ $third: #0ea3dd;
       top: 1.4rem;
       h3{
         font-family: HelveticaNeueCyr-Medium;
+        font-family: -apple-system, HelveticaNeueCyr-Medium, "Lucida Grande", sans-serif;
+
         font-size: 2rem;
         color: #959596;
       }
