@@ -103,9 +103,12 @@
 
     });
     let allparticipants = [];
+    let indic = 1;
+
     $.get('https://api.airtable.com/v0/appsZVlM0a7C9lACJ/iOS?api_key=keyqfoByFrvIArghp&sort%5B0%5D%5Bfield%5D=Total&sort%5B0%5D%5Bdirection%5D=desc&view=Grid+view',function (response) {
         allparticipants = response.records;
         keys = Object.keys(allparticipants[10].fields);
+        keys.unshift("")
         keys.map((item) => $("#keys").append("   <td class=\"keys-stroke\"><p>"+item+"</p></td>"));
 
     }).then(()=> {
@@ -129,6 +132,9 @@
             });
             stringOb.map((item)=> string = string.concat(item));
             $("#list").append("<tr  class=\"user-cell\"> " +
+                    "<td>"+
+                    "<p>"+indic++ + "</p>"+
+                    "</td>" +
                     ""+string+"" +
                     "</tr>")
         })
