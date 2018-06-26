@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <!-- <base href="/"> -->
 
-    <title>{{title}}</title>
+    <title>Leaderboard N17R | React-Native</title>
     <meta name="description" content="">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +13,8 @@
 
     <!-- Template Basic Images Start -->
     <meta property="og:image" content="path/to/image.jpg">
-    <link rel="shortcut icon" href="/images/icons/favicon.jpg" type="image/png">
+    <link rel="shortcut icon" type="image/png" href="/images/icons/favicon-96x96.png"/>
+
 
     <link rel="apple-touch-icon" sizes="180x180" href="path/to/image">
     <!-- Template Basic Images End -->
@@ -92,7 +93,8 @@
     let allparticipants = [];
     $.get('https://api.airtable.com/v0/appsZVlM0a7C9lACJ/react-native?api_key=keyqfoByFrvIArghp&sort%5B0%5D%5Bfield%5D=Total&sort%5B0%5D%5Bdirection%5D=desc&view=Grid+view',function (response) {
         allparticipants = response.records;
-        keys = Object.keys(allparticipants[5].fields);
+        console.log(allparticipants);
+        keys = Object.keys(allparticipants[20].fields);
         keys.map((item) => $("#keys").append("   <td class=\"keys-stroke\"><p>"+item+"</p></td>"));
     }).then(()=> {
         allparticipants.map((item) => {
@@ -114,7 +116,6 @@
                 stringOb[indexOf] = sv;
             });
             stringOb.map((item)=> string = string.concat(item));
-            console.log(string);
             $("#list").append("<tr  class=\"user-cell\"> " +
                     ""+string+"" +
                     "</tr>")
@@ -123,7 +124,7 @@
 
     let options = {
         shouldSort: true,
-        threshold: 0.6,
+        threshold: 0.1,
         location: 0,
         distance: 100,
         maxPatternLength: 32,
@@ -135,17 +136,21 @@
     let query ="";
     $("#fuse-se").change(()=> {
         query = $("#fuse-se").val();
-        let result;
-        if(query.length === 0){
-            result = allparticipants;
+        let results;
+        if(query.length < 1){
+
+            results= allparticipants;
         }
         else{
             let  fuse = new Fuse(allparticipants, options); // "list" is the item array
-            result = fuse.search(query);
-            $(".user-cell").remove();
+            results = fuse.search(query);
         }
+        $(".user-cell").remove();
 
-        result.map((item) => {
+        let sortedR = results.sort(function (i1,i2) {
+            return i2.fields.Total - i1.fields.Total ;
+        })
+        sortedR.map((item) => {
             let tdlist = item.fields;
             let string = "";
             let stringOb = [];
@@ -164,7 +169,6 @@
                 stringOb[indexOf] = sv;
             });
             stringOb.map((item)=> string = string.concat(item));
-            console.log(string);
             $("#list").append("<tr  class=\"user-cell\"> " +
                     ""+string+"" +
                     "</tr>")

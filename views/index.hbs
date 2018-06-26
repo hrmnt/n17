@@ -5,15 +5,15 @@
     <meta charset="utf-8">
     <!-- <base href="/"> -->
 
-    <title>{{title}}</title>
+    <title>Leaderboard N17R | IOS</title>
     <meta name="description" content="">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Template Basic Images Start -->
-    <meta property="og:image" content="path/to/image.jpg">
-    <link rel="shortcut icon" href="/images/icons/favicon.jpg" type="image/png">
+    <meta property="og:image" content="/images/icons/swift.svg">
+    <link rel="shortcut icon" type="image/png" href="/images/icons/favicon-96x96.png"/>
 
     <link rel="apple-touch-icon" sizes="180x180" href="path/to/image">
     <!-- Template Basic Images End -->
@@ -128,7 +128,6 @@
                 stringOb[indexOf] = sv;
             });
             stringOb.map((item)=> string = string.concat(item));
-            console.log(string);
             $("#list").append("<tr  class=\"user-cell\"> " +
                     ""+string+"" +
                     "</tr>")
@@ -137,7 +136,7 @@
 
     let options = {
         shouldSort: true,
-        threshold: 0.6,
+        threshold: 0.1,
         location: 0,
         distance: 100,
         maxPatternLength: 32,
@@ -156,10 +155,13 @@
         else{
             let  fuse = new Fuse(allparticipants, options); // "list" is the item array
             result = fuse.search(query);
-            $(".user-cell").remove();
         }
+        $(".user-cell").remove();
 
-        result.map((item) => {
+        let sortedR = result.sort(function (i1,i2) {
+            return i2.fields.Total - i1.fields.Total ;
+        })
+        sortedR.map((item) => {
             let tdlist = item.fields;
             let string = "";
             let stringOb = [];
