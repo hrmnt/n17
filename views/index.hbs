@@ -153,6 +153,7 @@
     };
     var query ="";
     $("#fuse-se").change(()=> {
+        indic=0;
         query = $("#fuse-se").val();
         var result;
         if(query.length === 0){
@@ -188,6 +189,9 @@
             stringOb.map((item)=> string = string.concat(item));
             console.log(string);
             $("#list").append("<tr  class=\"user-cell\"> " +
+                    "<td>"+
+                    "<p>"+indic++ + ".</p>"+
+                    "</td>" +
                     ""+string+"" +
                     "</tr>")
         })

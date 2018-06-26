@@ -142,6 +142,7 @@
     };
     var query ="";
     $("#fuse-se").change(()=> {
+        indic = 0;
         query = $("#fuse-se").val();
         var results;
         if(query.length < 1){
@@ -177,6 +178,9 @@
             });
             stringOb.map((item)=> string = string.concat(item));
             $("#list").append("<tr  class=\"user-cell\"> " +
+                    "<td>"+
+                    "<p>"+indic++ + ".</p>"+
+                    "</td>" +
                     ""+string+"" +
                     "</tr>")
         })
