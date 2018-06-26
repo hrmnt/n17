@@ -220,6 +220,12 @@ $third: #0ea3dd;
     @media (max-width: 798px) {
       border-top-left-radius: 10px;
       border-bottom-left-radius: 10px;
+      margin-left: 2.5rem;
+      position: absolute;
+      background-color: transparent!important;
+      p{
+        padding: 0!important;
+      }
     }
   }
   td:last-child {
@@ -227,6 +233,11 @@ $third: #0ea3dd;
     border-top-right-radius: 10px;
   }
   #keys td:first-child{
+    @media (max-width: 798px) {
+      opacity: 0;
+    }
+  }
+  #keys td:nth-child(2){
     @media (max-width: 798px) {
       opacity: 0;
     }
