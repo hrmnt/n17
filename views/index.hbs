@@ -84,13 +84,15 @@
     let index = 1;
     let keys =[];
     let os = ['','','st','nd','rd']
+    let images = ['startup','lion','dolphin'];
+    let ii=0;
     $.get('https://api.airtable.com/v0/appsZVlM0a7C9lACJ/iOS?api_key=keyqfoByFrvIArghp&maxRecords=3&sort%5B0%5D%5Bfield%5D=Total&sort%5B0%5D%5Bdirection%5D=desc&view=Grid+view',function (response) {
         ss= response.records;
 
     }).then(()=> {
         ss.map((item)=> $("#top").append(" <div class=\"col-md-4\">\n" +
                 "                        <div class=\"card-wrap  w-100 d-flex flex-column justify-content-center \">\n" +
-                "                            <img src=\"/images/icons/startup.svg\" alt=\"\">\n" +
+                "                            <img src=\"/images/icons/"+images[ii++]+".svg\" alt=\"\">\n" +
                 "                            <h1>"+item.fields.Name +"</h1>\n" +
                 "                            <h2>{{player}}</h2>\n" +
                 "                            <div class=\"circle d-flex align-items-end d"+index+"\">\n" +
@@ -160,14 +162,23 @@
         result.map((item) => {
             let tdlist = item.fields;
             let string = "";
-            $.each(tdlist, function(index, value) {
-                let sv = function (data) {
-                    return "<td>" +
-                            "<p class=\"user-fields\">"+data+"</p>" +
-                            "</td>"
-                }
-                string = string.concat(sv(value))
+            let stringOb = [];
+            let i =0;
+            $.each(tdlist, function() {
+                stringOb[i]="";
+                i++;
             });
+            $.each(tdlist, function(index, value) {
+                let kk = keys.find(item => item===index);
+                let indexOf  =keys.indexOf(kk)
+                let sv = "<td>" +
+                        "<p class=\"user-fields\">"+value+"</p>" +
+                        "</td>"
+
+                stringOb[indexOf] = sv;
+            });
+            stringOb.map((item)=> string = string.concat(item));
+            console.log(string);
             $("#list").append("<tr  class=\"user-cell\"> " +
                     ""+string+"" +
                     "</tr>")
