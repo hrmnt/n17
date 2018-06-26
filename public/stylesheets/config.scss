@@ -1,44 +1,56 @@
-@import url('../fonts/MuseoSansCyrl.otf');
-//@import url('../fonts/MuseoSansCyrl_0.otf');
-//@import url('../fonts/MuseoSansCyrl_1.otf');
-//@import url('../fonts/MuseoSansCyrl_2.otf');
-//@import url('../fonts/MuseoSansCyrl_3.otf');
-
-//@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
-
-@import "colors.scss";
-
+@import "fonts.scss";
 html {
   width: 100%;
   height: 100%;
-  box-sizing: border-box;
+}
+*{
+  font-family: 'HelveticaNeueCyr-Light', sans-serif;
 
 }
 
-//html, body {
-//  overflow: hidden;
-//}
 
-@media (min-width: 320px)  { html { font-size: 50.1%; } }  // 50.1% = 8px
-@media (min-width: 768px)  { html { font-size: 56.3%; } }  // 56.3% = 9px
-@media (min-width: 992px)  { html { font-size: 62.5%; } }  // 62.5% = 10px
+
+// 43.9% = 7px
+@media (min-width: 320px) {
+  html {
+    font-size: 50.1%;
+    //font-size: 43.9%;
+  }
+}
+
+// 50.1% = 8px
+@media (min-width: 768px) {
+  html {
+    //font-size: 56.3%;
+    font-size: 50.1%;
+  }
+}
+
+// 56.3% = 9px
+@media (min-width: 992px) {
+  html {
+    //font-size: 62.5%;
+    font-size: 56.5%;
+  }
+}
+
+// 62.5% = 10px
+@media (min-width: 1200px) {
+  html {
+    //font-size: 62.5%;
+    font-size: 56.5%;
+  }
+}
+
+
 
 body {
   width: 100%;
-  height: auto;
+  height: 100%;
   font-size: 1.6rem;
-  font-family: 'MuseoSansCyrl', sans-serif;
-  margin:0;
-  background-size:cover;
-
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-
 
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 9px;
     background-color: rgba(#929292, 0);
   }
 
@@ -66,30 +78,44 @@ body {
     -webkit-appearance: none;
     margin: 0;
   }
-}
-a {
-  &:hover {
-    text-decoration: none;
+
+  input:focus::-webkit-contacts-auto-fill-button {
+    display: none !important;
   }
-}
-strong {
-  font-weight: bold;
-}
-a, button {
-  cursor: pointer;
+
 }
 
-input:focus,
-select:focus,
-textarea:focus,
-button:focus {
-  outline: none;
-}
-
-section {
-  position: relative;
-}
-
-.btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus {
-  box-shadow: none;
-}
+//@import "functions";
+//@import "variables";
+//@import "mixins";
+//@import "print";
+//@import "reboot";
+//@import "type";
+//@import "images";
+//@import "code";
+//@import "grid";
+//@import "tables";
+//@import "forms";
+//@import "buttons";
+//@import "transitions";
+//@import "dropdown";
+//@import "button-group";
+//@import "input-group";
+//@import "custom-forms";
+//@import "nav";
+//@import "navbar";
+//@import "card";
+//@import "breadcrumb";
+//@import "pagination";
+//@import "badge";
+//@import "jumbotron";
+//@import "alert";
+//@import "progress";
+//@import "media";
+//@import "list-group";
+//@import "close";
+//@import "modal";
+//@import "tooltip";
+//@import "popover";
+//@import "carousel";
+//@import "utilities";

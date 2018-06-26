@@ -9,7 +9,7 @@ jQuery(document).ready(function($){
         $('.main-background').owlCarousel({
             loop: true,
             nav: true,
-            navText: ["<img src='/images/icons/back.png' style='height: 2.4rem; width: auto'>","<img src='/images/icons/back.png' style='height: 2.4rem; width: auto; transform: rotate(180deg'>"],
+            navText: ["<img src='../public/images/icons/back.png' style='height: 2.4rem; width: auto'>","<img src='../public/images/icons/back.png' style='height: 2.4rem; width: auto; transform: rotate(180deg'>"],
 
             dots: true,
             autoplay: true,
@@ -38,7 +38,7 @@ jQuery(document).ready(function($){
             // autoplay: true,
             // autoplayTimeout: 5000,
             // autoplayHoverPause: true,
-            navText: ["<img src='/images/icons/back.png' style='height: 1.8rem; width: auto'>","<img src='/images/icons/back.png' style='height: 1.8rem; width: auto; transform: rotate(180deg'>"],
+            navText: ["<img src='../public/images/icons/back.png' style='height: 1.8rem; width: auto'>","<img src='../public/images/icons/back.png' style='height: 1.8rem; width: auto; transform: rotate(180deg'>"],
             responsive:{
                 0:{
                     items:1
