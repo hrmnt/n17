@@ -58,16 +58,16 @@
                         <td class="keys-stroke"><p>{{this}}</p></td>
                     {{/each}}
                 </tr>
-                <!--{{#each users }}-->
-                    <!--<tr class="user-cell">-->
+                    <!--{{#each users }}-->
+                <!--<tr class="user-cell">-->
 
-                        <!--{{#each fields}}-->
-                            <!--<td>-->
-                                <!--<p class="user-fields">{{this}}</p>-->
-                            <!--</td>-->
+                    <!--{{#each fields}}-->
+                    <!--<td>-->
+                    <!--<p class="user-fields">{{this}}</p>-->
+                    <!--</td>-->
                         <!--{{/each}}-->
-                    <!--</tr>-->
-                <!--{{/each}}-->
+                <!--</tr>-->
+                    <!--{{/each}}-->
             </table>
         </div>
     </div>
@@ -82,21 +82,21 @@
 <script>
     var ss = [];
     var index = 1;
-    var keys =[];
-    var os = ['','','st','nd','rd']
-    var images = ['startup','lion','dolphin'];
-    var ii=0;
-    $.get('https://api.airtable.com/v0/appsZVlM0a7C9lACJ/iOS?api_key=keyqfoByFrvIArghp&maxRecords=3&sort%5B0%5D%5Bfield%5D=Total&sort%5B0%5D%5Bdirection%5D=desc&view=Grid+view',function (response) {
-        ss= response.records;
+    var keys = [];
+    var os = ['', '', 'st', 'nd', 'rd']
+    var images = ['startup', 'lion', 'dolphin'];
+    var ii = 0;
+    $.get('https://api.airtable.com/v0/appsZVlM0a7C9lACJ/iOS?api_key=keyqfoByFrvIArghp&maxRecords=3&sort%5B0%5D%5Bfield%5D=Total&sort%5B0%5D%5Bdirection%5D=desc&view=Grid+view', function (response) {
+        ss = response.records;
 
-    }).then(()=> {
-        ss.map((item)=> $("#top").append(" <div class=\"col-md-4\">\n" +
+    }).then(() => {
+        ss.map((item) => $("#top").append(" <div class=\"col-md-4\">\n" +
                 "                        <div class=\"card-wrap  w-100 d-flex flex-column justify-content-center \">\n" +
-                "                            <img src=\"/images/icons/"+images[ii++]+".svg\" alt=\"\">\n" +
-                "                            <h1>"+item.fields.Name +"</h1>\n" +
+                "                            <img src=\"/images/icons/" + images[ii++] + ".svg\" alt=\"\">\n" +
+                "                            <h1>" + item.fields.Name + "</h1>\n" +
                 "                            <h2>{{player}}</h2>\n" +
-                "                            <div class=\"circle d-flex align-items-end d"+index+"\">\n" +
-                "                                <p>"+index+++os[index]+"</p>\n" +
+                "                            <div class=\"circle d-flex align-items-end d" + index + "\">\n" +
+                "                                <p>" + index++ + os[index] + "</p>\n" +
                 "                            </div>\n" +
                 "                        </div>\n" +
                 "                    </div>"))
@@ -105,41 +105,43 @@
     var allparticipants = [];
     var indic = 1;
 
-    $.get('https://api.airtable.com/v0/appsZVlM0a7C9lACJ/iOS?api_key=keyqfoByFrvIArghp&sort%5B0%5D%5Bfield%5D=Total&sort%5B0%5D%5Bdirection%5D=desc&view=Grid+view',function (response) {
+    $.get('https://api.airtable.com/v0/appsZVlM0a7C9lACJ/iOS?api_key=keyqfoByFrvIArghp&sort%5B0%5D%5Bfield%5D=Total&sort%5B0%5D%5Bdirection%5D=desc&view=Grid+view', function (response) {
         allparticipants = response.records;
-        let rigjt = allparticipants.find((item) =>{
+        let rigjt = allparticipants.find((item) => {
             let iKey = Object.keys(item.fields);
-            return iKey[0] === "Name" && iKey[iKey.length-1] ==="Total";
+            return iKey[0] === "Name" && iKey[iKey.length -1] === "Total";
         });
+
         keys = Object.keys(rigjt.fields);
         keys.unshift("")
-        keys.map((item) => $("#keys").append("   <td class=\"keys-stroke\"><p>"+item+"</p></td>"));
+        keys.map((item) => $("#keys").append("   <td class=\"keys-stroke\"><p>" + item + "</p></td>"));
 
-    }).then(()=> {
+
+    }).then(() => {
         allparticipants.map((item) => {
             var tdlist = item.fields;
             var string = "";
             var stringOb = [];
-            var i =0;
-            $.each(tdlist, function() {
-                    stringOb[i]="";
-                    i++;
+            var i = 0;
+            $.each(tdlist, function () {
+                stringOb[i] = "";
+                i++;
             });
-            $.each(tdlist, function(index, value) {
-                var kk = keys.find(item => item===index);
-                var indexOf  =keys.indexOf(kk)
+            $.each(tdlist, function (index, value) {
+                var kk = keys.find(item => item === index);
+                var indexOf = keys.indexOf(kk)
                 var sv = "<td>" +
-                            "<p class=\"user-fields\">"+value+"</p>" +
-                            "</td>"
+                        "<p class=\"user-fields\">" + value + "</p>" +
+                        "</td>"
 
                 stringOb[indexOf] = sv;
             });
-            stringOb.map((item)=> string = string.concat(item));
+            stringOb.map((item) => string = string.concat(item));
             $("#list").append("<tr  class=\"user-cell\"> " +
-                    "<td>"+
-                    "<p>"+indic++ + ".</p>"+
+                    "<td>" +
+                    "<p>" + indic++ + ".</p>" +
                     "</td>" +
-                    ""+string+"" +
+                    "" + string + "" +
                     "</tr>")
         })
     });
@@ -155,48 +157,48 @@
             "fields.Name",
         ]
     };
-    var query ="";
-    $("#fuse-se").change(()=> {
-        indic=1;
+    var query = "";
+    $("#fuse-se").change(() => {
+        indic = 1;
         query = $("#fuse-se").val();
         var result;
-        if(query.length === 0){
+        if (query.length === 0) {
             result = allparticipants;
         }
-        else{
-            var  fuse = new Fuse(allparticipants, options); // "list" is the item array
+        else {
+            var fuse = new Fuse(allparticipants, options); // "list" is the item array
             result = fuse.search(query);
         }
         $(".user-cell").remove();
 
-        var sortedR = result.sort(function (i1,i2) {
-            return i2.fields.Total - i1.fields.Total ;
+        var sortedR = result.sort(function (i1, i2) {
+            return i2.fields.Total - i1.fields.Total;
         })
         sortedR.map((item) => {
             var tdlist = item.fields;
             var string = "";
             var stringOb = [];
-            var i =0;
-            $.each(tdlist, function() {
-                stringOb[i]="";
+            var i = 0;
+            $.each(tdlist, function () {
+                stringOb[i] = "";
                 i++;
             });
-            $.each(tdlist, function(index, value) {
-                var kk = keys.find(item => item===index);
-                var indexOf  =keys.indexOf(kk)
+            $.each(tdlist, function (index, value) {
+                var kk = keys.find(item => item === index);
+                var indexOf = keys.indexOf(kk)
                 var sv = "<td>" +
-                        "<p class=\"user-fields\">"+value+"</p>" +
+                        "<p class=\"user-fields\">" + value + "</p>" +
                         "</td>"
 
                 stringOb[indexOf] = sv;
             });
-            stringOb.map((item)=> string = string.concat(item));
+            stringOb.map((item) => string = string.concat(item));
             console.log(string);
             $("#list").append("<tr  class=\"user-cell\"> " +
-                    "<td>"+
-                    "<p>"+indic++ + ".</p>"+
+                    "<td>" +
+                    "<p>" + indic++ + ".</p>" +
                     "</td>" +
-                    ""+string+"" +
+                    "" + string + "" +
                     "</tr>")
         })
     })
